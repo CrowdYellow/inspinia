@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ArticlesController@index');
+
+Route::resource('articles', 'ArticlesController');
+
+// 用户身份验证相关的路由
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

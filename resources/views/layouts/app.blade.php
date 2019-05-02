@@ -8,6 +8,8 @@
     <link href="{{ asset('font-awesome/css/font-awesome.css') }}" rel="stylesheet">
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/plugins/toastr/toastr.min.css') }}" rel="stylesheet">
+    @yield('style')
 </head>
 <body class="top-navigation">
 <div id="wrapper">
@@ -44,5 +46,7 @@
 <script src="{{ asset('js/plugins/peity/jquery.peity.min.js') }}"></script>
 <!-- Peity demo -->
 <script src="{{ asset('js/demo/peity-demo.js') }}"></script>
+@yield('script')
+@include('shared._message')
 </body>
 </html>

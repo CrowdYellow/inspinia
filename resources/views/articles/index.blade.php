@@ -6,7 +6,10 @@
             <div class="animated fadeInRight">
                 <div class="ibox-content forum-post-container">
                     <div class="forum-post-info">
-                        <h4><span class="text-navy"><i class="fa fa-globe"></i> 主要板块</span> - 公告 - <span class="text-muted">自由谈判</span></h4>
+                        <h4>
+                            <span class="text-navy"><i class="fa fa-globe"></i> 主要板块</span>
+                            - 公告 - <span class="text-muted">自由谈判</span>
+                        </h4>
                     </div>
                     <div class="media">
                         <a class="forum-avatar" href="">
