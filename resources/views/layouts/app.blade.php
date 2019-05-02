@@ -11,8 +11,15 @@
     <link href="{{ asset('css/plugins/toastr/toastr.min.css') }}" rel="stylesheet">
     @yield('style')
 </head>
-<body class="top-navigation">
+<body class="top-navigation" onload="pagesLoad()">
 <div id="wrapper">
+    <div class="mask" id="mask">
+        <div class="sk-spinner sk-spinner-three-bounce" style="margin-top: 500px;">
+            <div class="sk-bounce1"></div>
+            <div class="sk-bounce2"></div>
+            <div class="sk-bounce3"></div>
+        </div>
+    </div>
     <div id="page-wrapper" class="gray-bg">
         <div class="row border-bottom white-bg">
             <div class="container">
@@ -46,6 +53,14 @@
 <script src="{{ asset('js/plugins/peity/jquery.peity.min.js') }}"></script>
 <!-- Peity demo -->
 <script src="{{ asset('js/demo/peity-demo.js') }}"></script>
+<script>
+    function pagesLoad() {
+        if(document.readyState === 'complete'){
+            //隐藏loading效果
+            $('#mask').css('display', 'none');
+        }
+    }
+</script>
 @yield('script')
 @include('shared._message')
 </body>

@@ -13,13 +13,11 @@ class ArticlesController extends Controller
 
     public function create()
     {
-        return redirect()->route('articles.index')->with('success', '1111111');
-//        return view('articles.create_and_edit');
+        return view('articles.create_and_edit');
     }
 
     public function show()
     {
-        return redirect()->route('articles.index')->with('error', '1111111');
-//        return view('articles.show');
+        return view('articles.show');
     }
 }
