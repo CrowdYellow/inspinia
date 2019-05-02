@@ -23,9 +23,15 @@
                     <form class="m-t" role="form" action="">
                         <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
                             <input type="text" class="form-control" placeholder="用户名" required="" name="name">
+                            @if ($errors->has('name'))
+                                <label id="-error" class="error" for="">{{ $errors->first('name') }}</label>
+                            @endif
                         </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="密码" required="">
+                        <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
+                            <input type="password" class="form-control" placeholder="密码" required="" name="password">
+                            @if ($errors->has('password'))
+                                <label id="-error" class="error" for="">{{ $errors->first('password') }}</label>
+                            @endif
                         </div>
                         <button type="submit" class="btn btn-primary block full-width m-b">登录</button>
                         <a href="#">
