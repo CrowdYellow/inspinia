@@ -8,7 +8,8 @@ class ArticlesController extends Controller
 {
     public function index()
     {
-        return view('articles.index');
+        $articles = [1,2,3];
+        return view('articles.index', compact('articles'));
     }
 
     public function create()
