@@ -14,7 +14,8 @@ class ArticlesController extends Controller
 
     public function create()
     {
-        return view('articles.create_and_edit');
+        $article = [];
+        return view('articles.create_and_edit', compact('article'));
     }
 
     public function show()
