@@ -109,7 +109,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li>
-                            <a href="" class="text-center">
+                            <a href="{{ route('users.show', user()->id) }}" class="text-center">
                                 <i class="fa fa-address-book-o" aria-hidden="true"> </i> {{ __('个人中心') }}
                             </a>
                         </li>

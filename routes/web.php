@@ -23,3 +23,6 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 // 用户注册相关路由
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('register', 'Auth\RegisterController@register');
+
+//用户
+Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);

@@ -21,12 +21,12 @@ class CreateUsersTable extends Migration
             $table->string('avatar');
             $table->string('ip');
             $table->string('address');
-            $table->string('introduction')->nullable()->comment('个人介绍');
             $table->string('status')->default('true');
+            $table->string('introduction')->nullable()->comment('个人介绍');
+            $table->integer('article_count')->default(0)->comment('文章');
             $table->integer('follow_count')->default(0)->comment('关注');
             $table->integer('fans')->default(0)->comment('粉丝');
             $table->integer('notification_count')->unsigned()->default(0)->comment('通知');
-            $table->integer('comment_count')->unsigned()->default(0)->comment('评论');
             $table->string('api_token',64)->unique();
             $table->rememberToken();
             $table->timestamps();
