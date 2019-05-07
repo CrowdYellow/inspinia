@@ -64,7 +64,7 @@ h5 {
   background-color: transparent;
 }
 .nav > li > a i {
-  margin-right: 6px;
+  /*margin-right: 6px;*/
 }
 .navbar {
   border: 0;
@@ -9004,3 +9004,5 @@ body.md-skin {
   background: rgba(3,3,3,.5);
   z-index: 9999;
 }
+
+.text-center{text-align:center !important;}

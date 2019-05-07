@@ -10,6 +10,13 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/plugins/toastr/toastr.min.css') }}" rel="stylesheet">
     @yield('style')
+    <style>
+        .notification {
+            line-height: 12px;
+            padding: 2px 5px;
+            border-radius: .25em;
+        }
+    </style>
 </head>
 <body class="top-navigation" onload="pagesLoad()">
 <div id="wrapper">
