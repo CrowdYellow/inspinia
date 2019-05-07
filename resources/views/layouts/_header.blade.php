@@ -76,10 +76,10 @@
         </ul>
         <ul class="nav navbar-top-links navbar-right">
             <li>
-                <a href=""> 登陆 </a>
+                <a href="{{ route('login') }}"> 登陆 </a>
             </li>
             <li>
-                <a href=""> 注册 </a>
+                <a href="{{ route('register') }}"> 注册 </a>
             </li>
         </ul>
     </div>
