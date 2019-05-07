@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('phone')->unique();
             $table->string('avatar');
             $table->string('ip');
+            $table->string('address');
             $table->string('introduction')->nullable()->comment('个人介绍');
             $table->string('status')->default('true');
             $table->integer('follow_count')->default(0)->comment('关注');

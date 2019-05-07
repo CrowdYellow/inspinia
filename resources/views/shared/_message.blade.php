@@ -9,7 +9,7 @@
                 "debug": false,
                 "progressBar": true,
                 "preventDuplicates": false,
-                "positionClass": "toast-top-full-width",
+                "positionClass": "toast-top-left",
                 "onclick": null,
                 "showDuration": "400",
                 "hideDuration": "2000",

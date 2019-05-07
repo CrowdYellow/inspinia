@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Handlers\GetAddressByIp;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -93,6 +94,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $address = new GetAddressByIp();
+        $region = $address->getAddress($data['ip'])['region'];
+        $city = $address->getAddress($data['ip'])['city'];
+        session()->flash('success', '注册成功！');
         return User::create([
             'name' => $data['name'],
             'phone' => $data['phone'],
@@ -100,6 +105,7 @@ class RegisterController extends Controller
             'ip' => $data['ip'],
             'api_token' => Str::random(60),
             'avatar' => 'images/user/default.png',
+            'address' => $region.'/'.$city,
         ]);
     }
 }
