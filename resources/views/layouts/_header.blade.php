@@ -110,7 +110,12 @@
                     <ul class="dropdown-menu dropdown-user">
                         <li>
                             <a href="{{ route('users.show', user()->id) }}" class="text-center">
-                                <i class="fa fa-address-book-o" aria-hidden="true"> </i> {{ __('个人中心') }}
+                                <i class="fa fa-address-book-o" aria-hidden="true"> </i> 个人中心
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('users.edit', user()->id) }}" class="text-center">
+                                <i class="fa fa-drivers-license-o" aria-hidden="true"> </i> 编辑资料
                             </a>
                         </li>
                         <li>
@@ -118,7 +123,7 @@
                                class="text-center"
                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                 <i class="fa fa-sign-out" aria-hidden="true"> </i>
-                                {{ __('退出登录') }}
+                                退出登录
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf

@@ -25,15 +25,16 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'api_token',
     ];
 
     /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
+     * 判断是否是当前用户
+     * @param $model
+     * @return bool
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function isAuthorOf($model)
+    {
+        return $this->id == $model->user_id;
+    }
 }
