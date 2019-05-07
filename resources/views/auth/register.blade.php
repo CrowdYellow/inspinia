@@ -43,6 +43,15 @@
                         <div class="form-group">
                             <input type="password" class="form-control" placeholder="确认密码" required="" name="password_confirmation">
                         </div>
+                        <div class="form-group{{ $errors->has('captcha') ? ' has-error' : '' }}">
+                            <input autocomplete="off" id="captcha" type="text" class="form-control" placeholder="验证码" required="" name="captcha">
+
+                            <img class="thumbnail captcha mt-3 mb-2" src="{{ captcha_src('flat') }}" onclick="this.src='/captcha/flat?'+Math.random()" alt="点击图片重新获取验证码">
+
+                            @if ($errors->has('captcha'))
+                                <label id="captcha" class="error" for="">{{ $errors->first('captcha') }}</label>
+                            @endif
+                        </div>
                         <button type="submit" class="btn btn-primary block full-width m-b">注册</button>
                     </form>
                 </div>
