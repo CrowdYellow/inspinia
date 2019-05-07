@@ -75,12 +75,39 @@
             </li>
         </ul>
         <ul class="nav navbar-top-links navbar-right">
-            <li>
-                <a href="{{ route('login') }}"> 登陆 </a>
-            </li>
-            <li>
-                <a href="{{ route('register') }}"> 注册 </a>
-            </li>
+            @guest
+                <li>
+                    <a href="{{ route('login') }}"> 登陆 </a>
+                </li>
+                <li>
+                    <a href="{{ route('register') }}"> 注册 </a>
+                </li>
+            @else
+                <li class="nav-item dropdown">
+                    <a
+                            id="navbarDropdown"
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            role="button"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="{{ route('logout') }}"
+                               onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                {{ __('退出登录') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            @endguest
         </ul>
     </div>
 </nav>
